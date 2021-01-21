@@ -1,6 +1,7 @@
 !**/src/main/**/target/
 !**/src/test/**/target/
-
+*.class
+/target
 mvn
 mvnw
 mvnw.*
