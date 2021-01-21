@@ -1,0 +1,10 @@
+com\mathan\is\config\SecurityConfig.class
+com\mathan\is\util\CommonConstants.class
+com\mathan\is\models\BaseModel.class
+com\mathan\is\config\filter\AuthenticationFilter.class
+com\mathan\is\DbServiceApplication.class
+com\mathan\is\controller\PlayerController.class
+com\mathan\is\repository\PlayerRepository.class
+com\mathan\is\models\Player.class
+com\mathan\is\config\DbConfiguration.class
+com\mathan\is\models\Login.class
