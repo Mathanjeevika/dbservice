@@ -10,16 +10,12 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.filter.OncePerRequestFilter;
 
-import com.mathan.is.util.CommonConstants;
-
 @Configuration
 public class AuthenticationFilter extends OncePerRequestFilter {
 
 	@Override
 	protected void doFilterInternal(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, FilterChain filterChain)
 			throws ServletException, IOException {
-		String authorization = httpServletRequest.getHeader(CommonConstants.AUTH_HEADER);
-		System.out.println(authorization);
 		filterChain.doFilter(httpServletRequest, httpServletResponse);		
 	}
 	

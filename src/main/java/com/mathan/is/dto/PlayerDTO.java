@@ -1,24 +1,22 @@
-package com.mathan.is.models;
+package com.mathan.is.dto;
 
-import javax.persistence.Entity;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-@Entity
-public class Player extends BaseModel {
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class PlayerDTO {
 
+	private Integer id;
 	private String name;
 	private String role;
 	private String team;
 	private Integer age;
-
-	public Player(String name, String role, String team, Integer age) {
-		super();
-		this.name = name;
-		this.role = role;
-		this.team = team;
-		this.age = age;
+	
+	public Integer getId() {
+		return id;
 	}
 
-	public Player() {
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getName() {
@@ -52,10 +50,5 @@ public class Player extends BaseModel {
 	public void setAge(Integer age) {
 		this.age = age;
 	}
-
-	@Override
-	public String toString() {
-		return "Player [name=" + name + ", role=" + role + ", team=" + team + ", age=" + age + "]";
-	}
-
+	
 }
