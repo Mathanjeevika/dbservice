@@ -10,8 +10,10 @@ import com.mathan.is.models.Carreer;
 @Repository
 public interface CarrerRepo extends JpaRepository<Carreer, Integer> {
 
-	public List<Carreer> findByAverageGreaterThanEqual(Double value);
+	public List<Carreer> findByAverageGreaterThanEqualAndIsActiveTrue(Double value);
 	
-	public List<Carreer> findByPlayerId(Integer player);
+	public List<Carreer> findByPlayerIdAndIsActiveTrue(Integer player);
+	
+	public Carreer findByIdAndIsActiveTrue(Integer id);
 	
 }

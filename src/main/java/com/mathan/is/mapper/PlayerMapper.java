@@ -44,5 +44,18 @@ public class PlayerMapper {
 	public List<PlayerDTO> playerToPlayerDTOS(List<Player> players) {
 		return players.stream().map(player -> playerToDTO(player)).collect(Collectors.toList());
 	}
+
+	public Player playerDTOtoPlayer(PlayerDTO playerDTO) {
+		Player player = new Player();
+		BeanUtils.copyProperties(playerDTO, player);
+		return player;
+	}
+	
+	public Carreer carrerDTOtoCarrer(CarrerDTO carrerDTO,Player player) {
+		Carreer carreer = new Carreer();
+		BeanUtils.copyProperties(carrerDTO, carreer);
+		carreer.setPlayer(player);
+		return carreer;
+	}
 	
 }

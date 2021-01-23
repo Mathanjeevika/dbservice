@@ -12,13 +12,17 @@ import com.mathan.is.models.Player;
 @Repository
 public interface PlayersRepo extends JpaRepository<Player, Integer>{
 
-	public List<Player> findByTeam(String team);
+	public List<Player> findByIsActiveTrue();
+
+	public Player findByIdAndIsActiveTrue(Integer id);
 	
-	public List<Player> findByAgeGreaterThanEqual(Integer value);
+	public List<Player> findByTeamAndIsActiveTrue(String team);
 	
-	public List<Player> findByNameLike(String value);
+	public List<Player> findByAgeGreaterThanEqualAndIsActiveTrue(Integer value);
 	
-	public List<Player> findByRole(String role);
+	public List<Player> findByNameLikeAndIsActiveTrue(String value);
+	
+	public List<Player> findByRoleAndIsActiveTrue(String role);
 	
 	@Query("select player from Player player where player.id in :playerIds")
 	public List<Player> findByCarrerIds(@Param("playerIds") List<Integer> carrers);

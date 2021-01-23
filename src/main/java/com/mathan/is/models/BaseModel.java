@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.PrePersist;
+import javax.persistence.PreUpdate;
 
 @MappedSuperclass
 public class BaseModel {
@@ -17,7 +18,8 @@ public class BaseModel {
 	
 	private LocalDateTime createdOn;
 	
-	private boolean isActive;
+	
+	private Boolean isActive;
 
 	public Integer getId() {
 		return id;
@@ -47,6 +49,11 @@ public class BaseModel {
 	public void beforeInsert() {
 		this.createdOn = LocalDateTime.now();
 		this.isActive = true;
+	}
+	
+	@PreUpdate
+	public void beforUpdate() {
+		
 	}
 	
 }
